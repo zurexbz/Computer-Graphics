@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <link
+      href="//fonts.googleapis.com/css?family=Signika+Negative:300"
+      rel="stylesheet"
+      type="text/css"
+    />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <link rel="stylesheet" href="./css/sound.css" />
+  </head>
+  <body>
+    <div class="container">
+      <div>
+        <button class="bck-btn" onclick="window.location.href='./index.html'">
+          Back
+        </button>
+      </div>
+      <form class="option-form">
+        <label for="sound" id="sound-label">Sound Volume <br /></label>
+        <input
+          onchange="onChangeVol()"
+          min="0"
+          max="100"
+          type="range"
+          name="sound"
+          id="sound"
+        />
+        <span id="indicator"></span>
+      </form>
+    </div>
+    <script src="./js/sound.js"></script>
+  </body>
+</html>

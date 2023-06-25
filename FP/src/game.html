@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <title>FP - AFH IYH</title>
+    <style>
+      body {
+        margin: 0px;
+      }
+      .game-over {
+        z-index: 10;
+        width: 100%;
+        height: 50vh;
+        text-align: center;
+        display: grid;
+        align-items: center;
+        justify-content: center;
+      }
+
+      .bck-btn {
+        background-color: rgb(76, 68, 68);
+        color: white;
+        font-style: 28px;
+        font-weight: 700;
+        padding: 20px 0;
+        border: none;
+        border-radius: 12px;
+      }
+      .bck-btn:hover {
+        cursor: pointer;
+      }
+      .hidden {
+        display: none;
+      }
+    </style>
+    <link rel="stylesheet" href="./css/ingame.css" />
+  </head>
+  <body>
+    <nav class="navigation-menu js-nav-menu">
+      <div class="navigation-menu__toggle js-nav-menu-toggle">
+        <span class="navigation-menu__bars"></span>
+      </div>
+      <ul class="menu-list">
+        <!-- <li id="settingBtn" class="menu-list__item">Setting</li> -->
+        <li id="exitBtn" class="menu-list__item">Exit</li>
+      </ul>
+    </nav>
+    <div style="font-size: 40px; position: absolute; padding: 20px; right: 0">
+      <span>Score : </span>
+      <span id="score"></span>
+      <!-- <button>Stop</button> -->
+    </div>
+    <div
+      style="font-size: 40px; position: absolute"
+      id="gameOver"
+      class="game-over hidden"
+    >
+      <div>
+        <p>Game Over!</p>
+        <span>Your Score is </span>
+        <span id="maxScore"></span>
+      </div>
+
+      <button onclick="window.location.href='./index.html'" class="bck-btn">
+        Back to Menu
+      </button>
+    </div>
+    <script src="index.js"></script>
+    <script>
+      var jsnav = document.getElementsByClassName("js-nav-menu-toggle");
+      var nav = jsnav[0];
+      nav.addEventListener("click", function () {
+        var menucl = document.getElementsByClassName("navigation-menu");
+        var menu = menucl[0];
+        if (!menu.classList.contains("navigation-menu--open")) {
+          menu.classList.add("navigation-menu--open");
+        } else {
+          menu.classList.remove("navigation-menu--open");
+        }
+      });
+
+      var exitBtn = document.getElementById("exitBtn");
+      exitBtn.addEventListener("click", function () {
+        window.location.href = "./index.html";
+      });
+
+      // var settingBtn = document.getElementById("settingBtn");
+      // settingBtn.addEventListener("click", function () {
+      //   window.location.href = "./sound.html";
+      // });
+    </script>
+  </body>
+</html>

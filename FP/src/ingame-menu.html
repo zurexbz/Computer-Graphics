@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Feeding Kendil</title>
+    <link rel="stylesheet" href="./css/ingame.css" />
+    <style>
+      @import url(https://fonts.googleapis.com/css?family=Lato:400);
+      * {
+        box-sizing: border-box;
+      }
+      html {
+        font-size: 62.5%;
+      }
+    </style>
+  </head>
+  <body>
+    <nav class="navigation-menu js-nav-menu">
+      <div class="navigation-menu__toggle js-nav-menu-toggle">
+        <span class="navigation-menu__bars"></span>
+      </div>
+      <ul class="menu-list">
+        <li id="settingBtn" class="menu-list__item">Setting</li>
+        <li id="exitBtn" class="menu-list__item">Exit</li>
+      </ul>
+    </nav>
+    <script>
+      var jsnav = document.getElementsByClassName("js-nav-menu-toggle");
+      var nav = jsnav[0];
+      nav.addEventListener("click", function () {
+        var menucl = document.getElementsByClassName("navigation-menu");
+        var menu = menucl[0];
+        if (!menu.classList.contains("navigation-menu--open")) {
+          menu.classList.add("navigation-menu--open");
+        } else {
+          menu.classList.remove("navigation-menu--open");
+        }
+      });
+
+      var exitBtn = document.getElementById("exitBtn");
+      exitBtn.addEventListener("click", function () {
+        window.location.href = "./menu.html";
+      });
+
+      var settingBtn = document.getElementById("settingBtn");
+      settingBtn.addEventListener("click", function () {
+        window.location.href = "./sound.html";
+      });
+    </script>
+  </body>
+</html>
