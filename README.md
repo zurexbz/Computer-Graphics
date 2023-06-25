@@ -7,7 +7,7 @@
 | 3 | 5025201163 | Muhammad Afdal Abdallah     |
 | 4 | 5025201164 | Fayyadh Hafizh              |
 
-# ETS
+# FP
 
 ## How to run
 
